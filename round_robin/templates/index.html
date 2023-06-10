@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+        {% comment %} <link href="style.css" rel="stylesheet"> {% endcomment %}
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <table>
+            <tr id="table_header"> 
+                <td class="head_pos head_spacing">Pos</td>
+                <td class="head_name head_spacing">Team</td>
+                <td class="head_played head_spacing">P</td>
+                <td class="head_win head_spacing">W</td>
+                <td class="head_draw head_spacing">D</td>
+                <td class="head_lose head_spacing">L</td>
+                <td class="head_pts head_spacing">Pts</td>
+            </tr>
+            
+            {% for team in teams %}
+                {% if forloop.counter <= 8 %}
+                <tr class="table_info">
+                {% else %}
+                <tr class="eliminated">
+                {% endif %}
+                    <td class="team_pos table_spacing"> {{forloop.counter}}</td>
+                    <td class="team_name table_spacing">{{ team.name }}</td>
+                    <td class="team_played table_spacing"> {{ team.game }} </td>
+                    <td class="team_win table_spacing"> {{ team.win }} </td>
+                    <td class="team_draw table_spacing"> {{ team.draw }} </td>
+                    <td class="team_lose table_spacing"> {{ team.lose }} </td>
+                    <td class="team_pts table_spacing"> {{ team.pts }} </td>
+                </tr>
+            {% endfor %}
+{% comment %} 
+
+            <tr class="table_info">
+                <td class="team_pos table_spacing">1</td>
+                <td class="team_name table_spacing">Team 1</td>
+                <td class="team_played table_spacing">6</td>
+                <td class="team_win table_spacing">3</td>
+                <td class="team_draw table_spacing">2</td>
+                <td class="team_lose table_spacing">1</td>
+                <td class="team_pts table_spacing">11</td>
+            </tr>
+
+            <tr class="table_info">
+                <td class="team_pos table_spacing">2</td>
+                <td class="team_name table_spacing">Team 2</td>
+                <td class="team_played table_spacing">6</td>
+                <td class="team_win table_spacing">1</td>
+                <td class="team_draw table_spacing">2</td>
+                <td class="team_lose table_spacing">3</td>
+                <td class="team_pts table_spacing">5</td>
+            </tr>
+            
+            <tr class="table_info">
+                <td class="team_pos table_spacing">3</td>
+                <td class="team_name table_spacing ">Team with very long name</td>
+                <td class="team_played table_spacing">6</td>
+                <td class="team_win table_spacing">1</td>
+                <td class="team_draw table_spacing">2</td>
+                <td class="team_lose table_spacing">3</td>
+                <td class="team_pts table_spacing">5</td>
+            </tr>
+
+            <tr class="table_info">
+                <td class="team_pos table_spacing">4</td>
+                <td class="team_name table_spacing ">Team with very long name</td>
+                <td class="team_played table_spacing">6</td>
+                <td class="team_win table_spacing">1</td>
+                <td class="team_draw table_spacing">2</td>
+                <td class="team_lose table_spacing">3</td>
+                <td class="team_pts table_spacing">5</td>
+            </tr>
+
+            <tr class="table_info">
+                <td class="team_pos table_spacing">5</td>
+                <td class="team_name table_spacing">Team with very long name</td>
+                <td class="team_played table_spacing">6</td>
+                <td class="team_win table_spacing">1</td>
+                <td class="team_draw table_spacing">2</td>
+                <td class="team_lose table_spacing">3</td>
+                <td class="team_pts table_spacing">5</td>
+            </tr>
+
+            <tr class="table_info">
+                <td class="team_pos table_spacing">6</td>
+                <td class="team_name table_spacing">Team with very long name</td>
+                <td class="team_played table_spacing">6</td>
+                <td class="team_win table_spacing">1</td>
+                <td class="team_draw table_spacing">2</td>
+                <td class="team_lose table_spacing">3</td>
+                <td class="team_pts table_spacing">5</td>
+            </tr>
+
+            <tr class="table_info">
+                <td class="team_pos table_spacing">7</td>
+                <td class="team_name table_spacing">Team with very long name</td>
+                <td class="team_played table_spacing">6</td>
+                <td class="team_win table_spacing">1</td>
+                <td class="team_draw table_spacing">2</td>
+                <td class="team_lose table_spacing">3</td>
+                <td class="team_pts table_spacing">5</td>
+            </tr>
+
+            <tr class="table_info">
+                <td class="team_pos table_spacing">8</td>
+                <td class="team_name table_spacing">Team with very long name</td>
+                <td class="team_played table_spacing">6</td>
+                <td class="team_win table_spacing">1</td>
+                <td class="team_draw table_spacing">2</td>
+                <td class="team_lose table_spacing">3</td>
+                <td class="team_pts table_spacing">5</td>
+            </tr>
+
+            <tr class="eliminated">
+                <td class="team_pos table_spacing">9</td>
+                <td class="team_name table_spacing">Team with very long name</td>
+                <td class="team_played table_spacing">6</td>
+                <td class="team_win table_spacing">1</td>
+                <td class="team_draw table_spacing">2</td>
+                <td class="team_lose table_spacing">3</td>
+                <td class="team_pts table_spacing">5</td>
+            </tr>
+
+            <tr class="eliminated">
+                <td class="team_pos table_spacing">10</td>
+                <td class="team_name table_spacing">Team with very long name</td>
+                <td class="team_played table_spacing">6</td>
+                <td class="team_win table_spacing">1</td>
+                <td class="team_draw table_spacing">2</td>
+                <td class="team_lose table_spacing">3</td>
+                <td class="team_pts table_spacing">5</td>
+            </tr> {% endcomment %}
+        </table>
+    </body>
+</html>

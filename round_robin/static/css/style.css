@@ -1,0 +1,98 @@
+html, body {
+    margin: 0;
+    /* background-color: #000; */
+    /* overflow: hidden; */
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Noto Sans';
+    font-style: italic;
+}
+
+table {
+    margin: 0 1.5em 0 1.5em;
+    width: calc(100% - 3em);
+    height: calc(100% - 2em);
+    border-spacing: 0 1em;
+    row-gap: 1em;
+    text-align: center; 
+    font-size: 2em;
+}
+
+
+#table_header {
+    background-color: #1e1e1e;
+    color: #fff;
+    border-radius: 0.5em; 
+    animation: header_anim 0.5s ease-out;
+}
+
+@keyframes header_anim {
+    0% {
+        transform: translateY(-200%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.head_spacing {
+    line-height: 1;
+    margin: 0;
+    padding: 0.5em 0 0.5em 0;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.table_spacing {
+    line-height: 1;
+    margin: 0;
+    padding: 0.5em 0 0.5em 0;
+    letter-spacing: -1px;
+}
+
+.head_pos, .team_pos {
+    border-radius: 0.5em 0 0 0.5em;
+}
+
+.head_pts, .team_pts {
+    border-radius: 0 0.5em 0.5em 0;
+}
+
+.head_pos,
+.head_played,
+.head_win,
+.head_draw,
+.head_lose,
+.head_pts {
+    width: 10%;
+}
+
+.table_info {
+    background-color: #fff600;
+}
+
+.table_info, .eliminated {
+    animation: row_anim 0.5s ease-out;
+    animation-delay: 0;
+}
+
+@keyframes row_anim {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.table_info:nth-child(even) {
+    background-color: #eee500;
+}
+
+.eliminated {
+    background-color: #1e1e1e;
+    color: #fff;
+}
